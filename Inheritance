@@ -1,0 +1,58 @@
+package pac1;
+ class student
+{
+	String name="Ramani" ;
+	int rollnum=10;
+	void collegename()
+	{
+		System.out.println("IRTT is my college");
+	}
+}
+
+// child class year extends student
+ class year extends student
+{
+	void yearname(int y)
+	{
+		System.out.println("In year class");
+	}
+}
+ //class dept inhertits parent student class only one parent can exist for a child single inheritance 
+ class dept extends student
+ {
+	 //Method overriding is done i.e child class method overrides parentclass method 
+	 void collegename ()
+	 {
+		 System.out.println("Institue of road transport technology");
+	 }
+	 void mydept()
+	 {	 
+	 System.out.println("Dept is CS");
+	 }
+ }
+ 
+public class Inheritance {
+	
+		public static void main(String[] args) {
+			
+			//child class referring child class object 
+			dept cs = new dept();
+			cs.mydept();
+			//child class object referring parent class
+			System.out.println("Student name is :" + cs.name);
+			System.out.println("Student roll num is : " + cs.rollnum);
+			//collegename method in parent class is overrided by child class method (same name for method)
+			cs.collegename();
+			//child class object cannot create a parent class reference 
+			//year ys = new student();
+			//down casting is not allowed top casting  allowed 
+			student st = new dept();
+			//eventhough parent class can reference the child object cannot make explicit calls .
+			//st.mydept();
+			
+			
+			
+
+	}
+
+}
